@@ -1,0 +1,49 @@
+def add(a, b):
+    return a + b
+
+def subtract(a, b):
+    return a - b
+
+def multiply(a, b):
+    return a * b
+
+def divide(a, b):
+    if b == 0:
+        return "Error: Division by zero!"
+    return a / b
+
+def calculator():
+    print("Welcome to the CLI Calculator!")
+    print("Operations: +, -, *, /")
+    
+    while True:
+        print("\nType 'exit' to quit.")
+        choice = input("Enter operation (+, -, *, /): ")
+        
+        if choice == 'exit':
+            print("Goodbye!")
+            break
+        elif choice not in ['+', '-', '*', '/']:
+            print("Invalid operation. Try again.")
+            continue
+
+        try:
+            num1 = float(input("Enter first number: "))
+            num2 = float(input("Enter second number: "))
+        except ValueError:
+            print("Invalid input. Please enter numeric values.")
+            continue
+
+        if choice == '+':
+            result = add(num1, num2)
+        elif choice == '-':
+            result = subtract(num1, num2)
+        elif choice == '*':
+            result = multiply(num1, num2)
+        elif choice == '/':
+            result = divide(num1, num2)
+
+        print(f"Result: {result}")
+
+if __name__ == "__main__":
+    calculator()

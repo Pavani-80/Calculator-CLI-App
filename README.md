@@ -1,50 +1,22 @@
-# Calculator-CLI-App
-def add(a, b):
-    return a + b
+# 🧮 CLI Calculator - Python
 
-def subtract(a, b):
-    return a - b
+This is a simple command-line calculator built with Python as part of the Elevate Labs Python Developer Internship Task 1.
 
-def multiply(a, b):
-    return a * b
+## ✅ Features
 
-def divide(a, b):
-    if b == 0:
-        return "Error: Division by zero!"
-    return a / b
+- Perform basic arithmetic operations:
+  - Addition (`+`)
+  - Subtraction (`-`)
+  - Multiplication (`*`)
+  - Division (`/`)
+- User-friendly text-based interface
+- Input validation and error handling
+- Loop until the user chooses to exit
 
-def calculator():
-    print("Welcome to the CLI Calculator!")
-    print("Operations: +, -, *, /")
-    
-    while True:
-        print("\nType 'exit' to quit.")
-        choice = input("Enter operation (+, -, *, /): ")
-        
-        if choice == 'exit':
-            print("Goodbye!")
-            break
-        elif choice not in ['+', '-', '*', '/']:
-            print("Invalid operation. Try again.")
-            continue
+## 🛠️ Technologies Used
 
-        try:
-            num1 = float(input("Enter first number: "))
-            num2 = float(input("Enter second number: "))
-        except ValueError:
-            print("Invalid input. Please enter numeric values.")
-            continue
+- Python 3
+- Command-line interface (CLI)
 
-        if choice == '+':
-            result = add(num1, num2)
-        elif choice == '-':
-            result = subtract(num1, num2)
-        elif choice == '*':
-            result = multiply(num1, num2)
-        elif choice == '/':
-            result = divide(num1, num2)
 
-        print(f"Result: {result}")
 
-if __name__ == "__main__":
-    calculator()
